@@ -1,0 +1,27 @@
+<style>
+  .article {
+      height: 180px;
+      padding-top: 0;
+      overflow: hidden;
+  }
+</style>
+<% @articles.each do |item| %>
+    <div class="article s6 n-max <%= cycle("", "", "pad-n", "pad-n") %>" style="margin-top: 5px;">
+      <% [item.avatar].each do |image| %>
+          <%= link_to image_tag(image.url(:thumb), :class => "br f-l"), item.page.full_path_with_locale %>
+      <% end %>
+      <div class="pad-r">
+        <a href="<% item.page.full_path_with_locale %>" title="<%= item.name %>">
+          <h3 style="margin-top: -7px;"><%= item.name %></h3>
+        </a>
+        <%# @truncate_me = item.description.html_safe unless item.description.blank? %>
+        <i> <%= raw item.short_descr %> </i>
+        <%= link_to image_tag("h1-mr.png", :alt => ">"), "/articles/#{item.id}", :class => "f-r", :title => "#{item.name}", :style => "margin-top: 0px;" %>
+      </div><!-- class:pad-r -->
+    </div><!-- class:s6 n-max -->
+<% end %>
+
+
+
+
+

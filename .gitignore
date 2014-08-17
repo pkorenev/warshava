@@ -1,0 +1,4 @@
+/.gitignore-bc
+/tmp
+/.idea
+/Gemfile.lock

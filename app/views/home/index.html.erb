@@ -1,0 +1,32 @@
+<section id="wr" class="container">
+  <div id="bring-me-up">
+
+    <%= render partial: 'partials/home_banner' %>
+
+    <article id="welcome" class="row">
+        <%= raw @home_page.welcome_html %>
+    </article>
+    <article id="service" class="row">
+      <%# container :services %>
+      <%= render partial: 'home/home_services' %>
+    </article>
+    <article id="slider" class="row">
+      <%# container :slider_carusel %>
+      <%= render partial: 'home/home_gallery' %>
+    </article>
+    <article id="news" class="row">
+      <%# container :news %>
+      <div class="s12">
+        <h2 class="br-h">
+          <a href="<%= @articles_page.full_path_with_locale %>" title="АНОНСИ">АНОНСИ</a>
+        </h2>
+      </div>
+      <%= render partial: 'home/home_articles' %>
+    </article>
+    <div class="push-crown row">
+      <div class="s5 br-h">&nbsp;</div>
+      <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+      <div class="s5 br-h crown-last-width">&nbsp;</div>
+    </div>
+  </div>
+</section>
